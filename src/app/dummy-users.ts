@@ -30,3 +30,4 @@ export const DUMMY_USERS = [
       avatar: 'user-6.jpg',
     },
   ];
+  
