@@ -9,7 +9,9 @@ import { SingleTaskComponent } from "./single-task/single-task.component";
   imports: [SingleTaskComponent]
 })
 export class TaskComponent {
-  @Input() name?:string;
+  @Input({required:true}) id!:string;
+  @Input({required:true}) name!:string;
+  
   tasks = [
     {
       id: 't1',
@@ -35,4 +37,9 @@ export class TaskComponent {
       dueDate: '2024-06-15',
     },
   ]
+
+  get selectedUserTask(){
+    return this.tasks.filter((task)=>task.userId === this.id)
+  }
+
 }
